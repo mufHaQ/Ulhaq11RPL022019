@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
     android:orientation="vertical"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:background="@color/background1">
 
     <ImageView
@@ -36,6 +33,16 @@
         android:layout_marginEnd="20dp"
         android:orientation="vertical"
         android:background="@color/putih">
+
+        <EditText
+            android:id="@+id/txtUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Username"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:inputType="textEmailAddress"/>
 
         <EditText
             android:id="@+id/txtEmail"
@@ -84,8 +91,4 @@
                 android:textSize="25sp" />
         </LinearLayout>
     </LinearLayout>
-
-
-
-
 </LinearLayout>
