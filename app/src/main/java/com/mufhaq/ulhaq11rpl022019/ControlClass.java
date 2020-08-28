@@ -10,7 +10,6 @@ import android.os.Bundle;
 public class ControlClass extends AppCompatActivity {
 
     private SharedPreferences sharedPreferences;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

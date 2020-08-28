@@ -2,12 +2,12 @@ package com.mufhaq.ulhaq11rpl022019;
 
 public class Model {
 
+    String original_title;
     String release_date;
     String poster_path;
     Boolean adult;
     String overview;
     int vote_count;
-
 
     public String getOriginal_title() {
         return original_title;
@@ -16,8 +16,6 @@ public class Model {
     public void setOriginal_title(String original_title) {
         this.original_title = original_title;
     }
-
-    String original_title;
 
     public String getRelease_date() {
         return release_date;
