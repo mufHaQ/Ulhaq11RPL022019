@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion "30.0.0"
 
     defaultConfig {
-        applicationId "com.mufhaq.ulhaq11rpl022019"
-        minSdkVersion 14
-        targetSdkVersion 29
+        applicationId "com.example.newprojectonlinelearning"
+        minSdkVersion 19
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -20,8 +20,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    repositories {
+        google()
+        jcenter()
+    }
 }
-
+//library : networking, RV,
+//networking : FAN, practice nya silahkan add RV graddle
 dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     //glide
@@ -40,6 +45,4 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.amitshekhar.android:android-networking:1.0.2'
-
-
 }
