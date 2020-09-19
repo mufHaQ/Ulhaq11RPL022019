@@ -17,6 +17,7 @@ public class DetailMovie extends AppCompatActivity {
     String date;
     String description;
     String path;
+    String id;
 
     TextView tvjudul;
     ImageView ivposter;
@@ -42,6 +43,7 @@ public class DetailMovie extends AppCompatActivity {
             path = extras.getString("path");
             tvjudul.setText(title);
             tvdesc.setText(description);
+            id = extras.getString("id");
             Glide.with(DetailMovie.this)
                     .load(path)
                     .override(Target.SIZE_ORIGINAL)
@@ -49,6 +51,7 @@ public class DetailMovie extends AppCompatActivity {
                     .into(ivposter);
             // and get whatever type user account id is
         }
-
     }
+
+
 }

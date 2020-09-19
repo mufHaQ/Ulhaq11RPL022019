@@ -90,12 +90,14 @@ public class ListData extends AppCompatActivity {
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 modelku = new Model();
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                modelku.setId(jsonObject.getInt("id"));
                                 modelku.setOriginal_title(jsonObject.getString("original_title"));
                                 modelku.setOverview(jsonObject.getString("overview"));
                                 modelku.setRelease_date(jsonObject.getString("release_date"));
                                 modelku.setPoster_path("https://image.tmdb.org/t/p/w500"+jsonObject.getString("poster_path"));
                                 modelku.setAdult(jsonObject.getBoolean("adult"));
                                 modelku.setVote_count(jsonObject.getInt("vote_count"));
+
                                 DataArrayList.add(modelku);
                             }
                             //untuk handle click
@@ -110,6 +112,7 @@ public class ListData extends AppCompatActivity {
                                     intent.putExtra("date", movie.release_date);
                                     intent.putExtra("description", movie.overview);
                                     intent.putExtra("path", movie.poster_path);
+                                    intent.putExtra("id",movie.id);
                                     startActivity(intent);
                                 }
 
