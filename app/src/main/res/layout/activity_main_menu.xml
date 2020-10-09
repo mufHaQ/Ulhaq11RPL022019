@@ -38,9 +38,8 @@
                     android:padding="10dp"
                     android:singleLine="true"
                     android:text="Lihat Product"
-                    android:textColor="@color/hitam"
-                    tools:targetApi="lollipop"
-                    android:layout_alignParentLeft="true" />
+                    android:textColor="#000000"
+                    tools:targetApi="lollipop" />
 
             </RelativeLayout>
 
@@ -67,19 +66,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/articleImage2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:adjustViewBounds="false"
-                    android:background="@color/darkGray"
-                    android:cropToPadding="true"
-                    android:padding="0dp"
-                    android:paddingBottom="0dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/wonderfulindonesia" />
-
                 <TextView
+                    android:id="@+id/articleName2"
                     style="@android:style/TextAppearance.Medium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -90,10 +78,9 @@
                     android:marqueeRepeatLimit="marquee_forever"
                     android:padding="10dp"
                     android:singleLine="true"
-                    android:text="Lihat Product Favouriteku"
+                    android:text="Lihat Favouriteku"
                     android:textColor="#000000"
-                    tools:targetApi="lollipop"
-                    android:layout_alignParentLeft="true" />
+                    tools:targetApi="lollipop" />
 
             </RelativeLayout>
 

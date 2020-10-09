@@ -2,7 +2,13 @@ package com.mufhaq.ulhaq11rpl022019;
 
 import android.util.Log;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
+
 import io.realm.Realm;
+import io.realm.RealmResults;
 
 public class RealmHelper {
 
@@ -33,6 +39,12 @@ public class RealmHelper {
                 }
             }
         });
+    }
+
+    // untuk memanggil semua data
+    public List<ModelMovieRealm> getAllMovie(){
+        RealmResults<ModelMovieRealm> results = realm.where(ModelMovieRealm.class).findAll();
+        return results;
     }
 
 }

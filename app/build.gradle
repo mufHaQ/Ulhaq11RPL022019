@@ -5,7 +5,7 @@ android {
     buildToolsVersion "30.0.0"
 
     defaultConfig {
-        applicationId "com.example.newprojectonlinelearning"
+        applicationId "com.mufhaq.ulhaq11rpl022019"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1

@@ -20,6 +20,7 @@ public class DetailMovie extends AppCompatActivity {
     RealmHelper realmHelper;
     ModelMovieRealm movieModel;
 
+
     Bundle extras;
     String title;
     String date;
@@ -29,29 +30,27 @@ public class DetailMovie extends AppCompatActivity {
 
     TextView tvjudul;
     ImageView ivposter;
-    TextView tvdesc;
+    TextView tvdesk;
     Button btnbookmark;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_movie);
         extras = getIntent().getExtras();
-
-        tvjudul = (TextView) findViewById(R.id.tvjudul);
+        tvjudul = (TextView)findViewById(R.id.tvjudul);
+        tvdesk = (TextView)findViewById(R.id.tvdesk);
         ivposter = (ImageView) findViewById(R.id.ivposter);
-        tvdesc = (TextView) findViewById(R.id.tvdesc);
         btnbookmark = (Button) findViewById(R.id.btnbookmark);
 
-        if (extras != null){
+        if (extras != null) {
             title = extras.getString("judul");
+            id = extras.getString("id");
             date = extras.getString("date");
             description = extras.getString("description");
             path = extras.getString("path");
             tvjudul.setText(title);
-            tvdesc.setText(description);
-            id = extras.getString("id");
+            tvdesk.setText(description);
             Glide.with(DetailMovie.this)
                     .load(path)
                     .override(Target.SIZE_ORIGINAL)
