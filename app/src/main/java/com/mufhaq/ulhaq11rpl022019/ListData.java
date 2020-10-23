@@ -69,7 +69,7 @@ public class ListData extends AppCompatActivity {
     }
 
     void addDataOnline(){
-        AndroidNetworking.get("https://api.themoviedb.org/3/movie/now_playing?api_key=6ac7a042ac3b7599a689eb943fa0b6d0&language=en-US")
+        AndroidNetworking.get("https://api.themoviedb.org/3/movie/now_playing?api_key=34372ea84627b45abaadba581cc17bc3&language=en-US")
                 .setTag("test")
                 .setPriority(Priority.LOW)
                 .build()
