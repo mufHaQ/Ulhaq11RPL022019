@@ -14,12 +14,7 @@ import com.bumptech.glide.request.target.Target;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
-public class DetailMovie extends AppCompatActivity {
-
-    Realm realm;
-    RealmHelper realmHelper;
-    ModelMovieRealm movieModel;
-
+public class DetailFavourite extends AppCompatActivity {
 
     Bundle extras;
     String title;
@@ -31,17 +26,15 @@ public class DetailMovie extends AppCompatActivity {
     TextView tvjudul;
     ImageView ivposter;
     TextView tvdesk;
-    Button btnbookmark;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_movie);
+        setContentView(R.layout.activity_detail_favourite);
         extras = getIntent().getExtras();
-        tvjudul = (TextView)findViewById(R.id.tvjudul);
-        tvdesk = (TextView)findViewById(R.id.tvdesk);
-        ivposter = (ImageView) findViewById(R.id.ivposter);
-        btnbookmark = (Button) findViewById(R.id.btnbookmark);
+        tvjudul = (TextView)findViewById(R.id.tvjudulfavourite);
+        tvdesk = (TextView)findViewById(R.id.tvdeskfavourite);
+        ivposter = (ImageView) findViewById(R.id.ivposterfavourite);
 
         if (extras != null) {
             title = extras.getString("judul");
@@ -51,35 +44,12 @@ public class DetailMovie extends AppCompatActivity {
             path = extras.getString("path");
             tvjudul.setText(title);
             tvdesk.setText(description);
-            Glide.with(DetailMovie.this)
+            Glide.with(DetailFavourite.this)
                     .load(path)
                     .override(Target.SIZE_ORIGINAL)
                     .placeholder(R.mipmap.ic_launcher)
                     .into(ivposter);
             // and get whatever type user account id is
         }
-
-        //Set up Realm
-        Realm.init(DetailMovie.this);
-        RealmConfiguration configuration = new RealmConfiguration.Builder().build();
-        realm = Realm.getInstance(configuration);
-
-
-        btnbookmark.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                movieModel = new ModelMovieRealm();
-                movieModel.setDesc(description);
-                movieModel.setJudul(title);
-                movieModel.setPath(path);
-                movieModel.setReleaseDate(date);
-
-                realmHelper = new RealmHelper(realm);
-                realmHelper.save(movieModel);
-
-            }
-        });
     }
-
-
 }

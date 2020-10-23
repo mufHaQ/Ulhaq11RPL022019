@@ -1,5 +1,6 @@
 package com.mufhaq.ulhaq11rpl022019;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 
@@ -20,6 +21,7 @@ public class ListDataFavourite extends AppCompatActivity {
     private DataAdapterFavourite adapter;
     private List<ModelMovieRealm> DataArrayList; //kit add kan ke adapter
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +36,13 @@ public class ListDataFavourite extends AppCompatActivity {
         adapter = new DataAdapterFavourite(DataArrayList, new DataAdapterFavourite.Callback() {
             @Override
             public void onClick(int position) {
+                Intent move = new Intent(getApplicationContext(), DetailFavourite.class);
+                move.putExtra("judul",DataArrayList.get(position).getJudul());
+                move.putExtra("path",DataArrayList.get(position).getPath());
+                move.putExtra("date",DataArrayList.get(position).getReleaseDate());
+                move.putExtra("deskripsi",DataArrayList.get(position).getDesc());
 
+                startActivity(move);
             }
 
             @Override

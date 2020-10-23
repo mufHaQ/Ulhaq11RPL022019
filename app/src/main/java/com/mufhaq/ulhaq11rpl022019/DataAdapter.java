@@ -50,10 +50,11 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DatakuViewHold
         holder.txtNama.setText(dataList.get(position).getOriginal_title());
         holder.txtNpm.setText(dataList.get(position).getRelease_date());
         Log.d("makananku", "onBindViewHolder: "+dataList.get(position).getPoster_path());
+        //pakai glide karena untuk nampilkan data gambar dari URL / permission / graddle
         Glide.with(holder.itemView)
                 .load(dataList.get(position).getPoster_path())
 //                .override(Target.SIZE_ORIGINAL)
-//                .apply(new RequestOptions().override(600))
+                .apply(new RequestOptions().override(600))
                 .placeholder(R.mipmap.ic_launcher)
                 .into(holder.ivprofile);
 

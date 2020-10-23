@@ -53,8 +53,8 @@ public class DataAdapterFavourite extends RecyclerView.Adapter<DataAdapterFavour
         //pakai glide karena untuk nampilkan data gambar dari URL / permission / graddle
         Glide.with(holder.itemView)
                 .load(dataList.get(position).getPath())
-                //.override(Target.SIZE_ORIGINAL)
-                .apply(new RequestOptions().override(600, 200))
+//                .override(Target.SIZE_ORIGINAL)
+                .apply(new RequestOptions().override(600))
                 .placeholder(R.mipmap.ic_launcher)
                 .into(holder.ivprofile);
 

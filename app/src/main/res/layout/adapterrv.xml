@@ -39,12 +39,14 @@
                     android:layout_height="wrap_content"
                     android:text="name : placeholder"
                     android:textColor="#14B7DC"
+                    android:textSize="70px"
                     android:id="@+id/tvname"/>
 
                 <TextView
                     android:id="@+id/tvdesc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="50px"
                     android:text="desc : placeholder" />
             </LinearLayout>
         </LinearLayout>

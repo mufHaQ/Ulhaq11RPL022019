@@ -22,7 +22,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class ListData extends AppCompatActivity {
-
     private RecyclerView recyclerView;
     private DataAdapter adapter;
     private ArrayList<Model> DataArrayList; //kit add kan ke adapter
@@ -33,10 +32,9 @@ public class ListData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_data);
         recyclerView = (RecyclerView) findViewById(R.id.rvdata);
-//        addData();
+        //addData();
         addDataOnline();
     }
-
     void addData() {
         //offline, isi data offline dulu
         DataArrayList = new ArrayList<>();
@@ -70,8 +68,8 @@ public class ListData extends AppCompatActivity {
 
     }
 
-    void addDataOnline() {
-        AndroidNetworking.get("https://api.themoviedb.org/3/movie/now_playing?api_key=34372ea84627b45abaadba581cc17bc3&language=en-US")
+    void addDataOnline(){
+        AndroidNetworking.get("https://api.themoviedb.org/3/movie/now_playing?api_key=6ac7a042ac3b7599a689eb943fa0b6d0&language=en-US")
                 .setTag("test")
                 .setPriority(Priority.LOW)
                 .build()
@@ -97,7 +95,6 @@ public class ListData extends AppCompatActivity {
                                 modelku.setPoster_path("https://image.tmdb.org/t/p/w500"+jsonObject.getString("poster_path"));
                                 modelku.setAdult(jsonObject.getBoolean("adult"));
                                 modelku.setVote_count(jsonObject.getInt("vote_count"));
-
                                 DataArrayList.add(modelku);
                             }
                             //untuk handle click
@@ -105,15 +102,14 @@ public class ListData extends AppCompatActivity {
                                 @Override
                                 public void onClick(int position) {
                                     Model movie = DataArrayList.get(position);
-//                                    intent
-                                    Toast.makeText(ListData.this, ""+position, Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(getApplicationContext(), DetailMovie.class);
-                                    intent.putExtra("title", movie.original_title);
-                                    intent.putExtra("date", movie.release_date);
-                                    intent.putExtra("description", movie.overview);
-                                    intent.putExtra("path", movie.poster_path);
                                     intent.putExtra("id",movie.id);
+                                    intent.putExtra("judul",movie.original_title);
+                                    intent.putExtra("date",movie.release_date);
+                                    intent.putExtra("deskripsi",movie.overview);
+                                    intent.putExtra("path",movie.poster_path);
                                     startActivity(intent);
+                                    Toast.makeText(ListData.this, ""+position, Toast.LENGTH_SHORT).show();
                                 }
 
                                 @Override
