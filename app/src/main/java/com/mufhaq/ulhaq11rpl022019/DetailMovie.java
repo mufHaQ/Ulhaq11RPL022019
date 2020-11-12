@@ -1,7 +1,9 @@
 package com.mufhaq.ulhaq11rpl022019;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +34,7 @@ public class DetailMovie extends AppCompatActivity {
     ImageView ivposter;
     TextView tvdesk;
     Button btnbookmark;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +82,6 @@ public class DetailMovie extends AppCompatActivity {
 
             }
         });
+
     }
-
-
 }

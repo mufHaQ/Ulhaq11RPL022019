@@ -1,7 +1,9 @@
 package com.mufhaq.ulhaq11rpl022019;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +12,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.Target;
+
+import java.util.List;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;

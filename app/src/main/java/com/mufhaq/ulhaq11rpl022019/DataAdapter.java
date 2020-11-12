@@ -54,7 +54,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DatakuViewHold
         Glide.with(holder.itemView)
                 .load(dataList.get(position).getPoster_path())
 //                .override(Target.SIZE_ORIGINAL)
-                .apply(new RequestOptions().override(600))
+                .apply(new RequestOptions().override(400))
                 .placeholder(R.mipmap.ic_launcher)
                 .into(holder.ivprofile);
 
