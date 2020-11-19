@@ -7,7 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
@@ -28,6 +30,7 @@ public class  ListData extends AppCompatActivity {
     private DataAdapter adapter;
     private ArrayList<Model> DataArrayList; //kit add kan ke adapter
     private ImageView tambah_data;
+    TextView tvnodata;
     ProgressDialog dialog;
 
 
@@ -36,7 +39,10 @@ public class  ListData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_data);
         recyclerView = (RecyclerView) findViewById(R.id.rvdata);
+        tvnodata = (TextView) findViewById(R.id.tvnodata);
         dialog = new ProgressDialog(ListData.this);
+        tvnodata.setVisibility(View.GONE);
+        recyclerView.setVisibility(View.VISIBLE);
         //addData();
         addDataOnline();
     }

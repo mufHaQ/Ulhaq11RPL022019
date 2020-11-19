@@ -30,6 +30,7 @@ public class ListDataFavourite extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_data);
         recyclerView = (RecyclerView) findViewById(R.id.rvdata);
+        tvnodata = (TextView) findViewById(R.id.tvnodata);
         DataArrayList = new ArrayList<>();
         // Setup Realm
         RealmConfiguration configuration = new RealmConfiguration.Builder().build();
@@ -40,6 +41,8 @@ public class ListDataFavourite extends AppCompatActivity {
             tvnodata.setVisibility(View.VISIBLE);
             recyclerView.setVisibility(View.GONE);
         }else{
+            tvnodata.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.VISIBLE);
             adapter = new DataAdapterFavourite(DataArrayList, new DataAdapterFavourite.Callback() {
                 @Override
                 public void onClick(int position) {
@@ -48,7 +51,7 @@ public class ListDataFavourite extends AppCompatActivity {
                     move.putExtra("path",DataArrayList.get(position).getPath());
                     move.putExtra("date",DataArrayList.get(position).getReleaseDate());
                     move.putExtra("deskripsi",DataArrayList.get(position).getDesc());
-
+                    // di putextra yang lain
                     startActivity(move);
                 }
 
