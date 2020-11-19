@@ -2,7 +2,9 @@ package com.mufhaq.ulhaq11rpl022019;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -19,6 +21,7 @@ public class ListDataFavourite extends AppCompatActivity {
     RealmHelper realmHelper;
     private RecyclerView recyclerView;
     private DataAdapterFavourite adapter;
+    TextView tvnodata;
     private List<ModelMovieRealm> DataArrayList; //kit add kan ke adapter
 
 
@@ -33,26 +36,31 @@ public class ListDataFavourite extends AppCompatActivity {
         realm = Realm.getInstance(configuration);
         realmHelper = new RealmHelper(realm);
         DataArrayList = realmHelper.getAllMovie();
-        adapter = new DataAdapterFavourite(DataArrayList, new DataAdapterFavourite.Callback() {
-            @Override
-            public void onClick(int position) {
-                Intent move = new Intent(getApplicationContext(), DetailFavourite.class);
-                move.putExtra("judul",DataArrayList.get(position).getJudul());
-                move.putExtra("path",DataArrayList.get(position).getPath());
-                move.putExtra("date",DataArrayList.get(position).getReleaseDate());
-                move.putExtra("deskripsi",DataArrayList.get(position).getDesc());
+        if (DataArrayList.size() == 0){
+            tvnodata.setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.GONE);
+        }else{
+            adapter = new DataAdapterFavourite(DataArrayList, new DataAdapterFavourite.Callback() {
+                @Override
+                public void onClick(int position) {
+                    Intent move = new Intent(getApplicationContext(), DetailFavourite.class);
+                    move.putExtra("judul",DataArrayList.get(position).getJudul());
+                    move.putExtra("path",DataArrayList.get(position).getPath());
+                    move.putExtra("date",DataArrayList.get(position).getReleaseDate());
+                    move.putExtra("deskripsi",DataArrayList.get(position).getDesc());
 
-                startActivity(move);
-            }
+                    startActivity(move);
+                }
 
-            @Override
-            public void test() {
+                @Override
+                public void test() {
 
-            }
-        });
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ListDataFavourite.this);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
+                }
+            });
+            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ListDataFavourite.this);
+            recyclerView.setLayoutManager(layoutManager);
+            recyclerView.setAdapter(adapter);
+        }
 
     }
 

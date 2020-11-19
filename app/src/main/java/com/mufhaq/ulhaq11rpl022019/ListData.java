@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 import android.app.ProgressDialog;
 
-public class ListData extends AppCompatActivity {
+public class  ListData extends AppCompatActivity {
     private RecyclerView recyclerView;
     private DataAdapter adapter;
     private ArrayList<Model> DataArrayList; //kit add kan ke adapter
