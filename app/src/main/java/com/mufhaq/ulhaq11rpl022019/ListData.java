@@ -118,7 +118,7 @@ public class  ListData extends AppCompatActivity {
                                 public void onClick(int position) {
                                     Model movie = DataArrayList.get(position);
                                     Intent intent = new Intent(getApplicationContext(), DetailMovie.class);
-                                    intent.putExtra("id",movie.id);
+                                    intent.putExtra("idi",movie.id);
                                     intent.putExtra("judul",movie.original_title);
                                     intent.putExtra("date",movie.release_date);
                                     intent.putExtra("deskripsi",movie.overview);

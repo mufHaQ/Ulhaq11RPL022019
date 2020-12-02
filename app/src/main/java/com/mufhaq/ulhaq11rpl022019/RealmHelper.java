@@ -42,7 +42,7 @@ public class RealmHelper {
     }
 
     // untuk memanggil semua data
-    public List<ModelMovieRealm> getAllMovie(){
+    public List<ModelMovieRealm> getAllClub(){
         RealmResults<ModelMovieRealm> results = realm.where(ModelMovieRealm.class).findAll();
         return results;
     }

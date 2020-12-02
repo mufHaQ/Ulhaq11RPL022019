@@ -36,7 +36,7 @@ public class ListDataFavourite extends AppCompatActivity {
         RealmConfiguration configuration = new RealmConfiguration.Builder().build();
         realm = Realm.getInstance(configuration);
         realmHelper = new RealmHelper(realm);
-        DataArrayList = realmHelper.getAllMovie();
+        DataArrayList = realmHelper.getAllClub();
         if (DataArrayList.size() == 0){
             tvnodata.setVisibility(View.VISIBLE);
             recyclerView.setVisibility(View.GONE);

@@ -28,6 +28,11 @@ android {
 //library : networking, RV,
 //networking : FAN, practice nya silahkan add RV graddle
 dependencies {
+    //FB Sign In
+    implementation 'com.facebook.android:facebook-login:[8.1)'
+    //Facebook Sign in
+    implementation 'com.facebook.android:facebook-android-sdk:[5,6)'
+    implementation 'com.facebook.android:facebook-login:[8.1)'
     //Google Sign in
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
     //RealmDB
